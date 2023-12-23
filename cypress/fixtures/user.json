@@ -1,0 +1,9 @@
+{
+  "username": "standard_user",
+  "password": "secret_sauce",
+  "firstName": "Ahmed",
+  "lastName": "Ashour",
+  "postalCode": "12918",
+  "numberOfItems": "3",
+  "_comment": "numberOfItems should be equal 1/2/3 otherwise will fail the test"
+}
