@@ -30,13 +30,11 @@ describe('cypress automation challenge spec', () => {
   it('should complete a full scenario on saucedemo', () => { 
     //1.Validate the url after login and Add (numberOfItems) items in the cart.
     homePage.isOpen()
-    //cy.wait(3000)
     cy.validateUrl(Cypress.config().homeUrl)
     homePage.addItems(numberOfItems)
     //2.Open the cart and Validate the url.
     homePage.openCart()
     cartPage.isOpen()
-    //cy.wait(3000)
     cy.validateUrl(Cypress.config().cartUrl)
     //3.Validate the number of items in the cart.
     cartPage.validateNumberOfCartItems(numberOfItems)
@@ -44,12 +42,10 @@ describe('cypress automation challenge spec', () => {
     cartPage.checkout()
     //5.Validate the url of checkout step 1 and complete the checkout.
     checkoutStep1Page.isOpen()
-    //cy.wait(3000)
     cy.validateUrl(Cypress.config().checkoutStep1Url)
     checkoutStep1Page.completeCheckout(firstName,lastName,postalCode)
     //6.Validate the url of checkout step 2.
     checkoutStep2Page.isOpen()
-    //cy.wait(3000)
     cy.validateUrl(Cypress.config().checkoutStep2Url)
     //7.Validate the number of items after checkout.
     checkoutStep2Page.validateNumberOfCartItems(numberOfItems)
@@ -57,7 +53,6 @@ describe('cypress automation challenge spec', () => {
     checkoutStep2Page.finishCheckout()
     checkoutCompletePage.confirmPurchaseAndBackHome()
     homePage.isOpen()
-    //cy.wait(3000)
     cy.validateUrl(Cypress.config().homeUrl)
   })
 
